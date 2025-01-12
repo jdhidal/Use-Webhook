@@ -2,21 +2,21 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Ruta para el webhook
+# Route for the webhook
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    # Obtener datos del cuerpo de la solicitud
+    # Get data from the request body
     data = request.json
     if not data or 'message' not in data:
-        return jsonify({"error": "No se encontró el campo 'message'"}), 400
+        return jsonify({"error": "Field 'message' not found"}), 400
 
-    # Procesar el mensaje
+    # Process the message
     message = data['message']
-    print(f"Mensaje recibido: {message}")
+    print(f"Message received: {message}")
 
-    # Responder al cliente
-    return jsonify({"response": f"Mensaje recibido correctamente: {message}"}), 200
+    # Respond to the client
+    return jsonify({"response": f"Message received successfully: {message}"}), 200
 
 if __name__ == '__main__':
-    # Ejecutar el servidor en el puerto 5000
+    # Run the server on port 5000
     app.run(host='0.0.0.0', port=5000)
