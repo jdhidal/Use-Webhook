@@ -25,7 +25,7 @@ Python is ideal for implementing webhooks due to:
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/tu-repositorio/webhook-python.git
+    git clone https://github.com/jdhidal/Use-Webhook.git
     cd Use-Webhook
     ```
 
